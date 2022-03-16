@@ -5,23 +5,24 @@ class CitySearch extends Component {
 		query: "",
 		suggestions: [],
 	};
+
 	handleInputChanged = (event) => {
 		const value = event.target.value;
 		const suggestions = this.props.locations.filter((location) => {
 			return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
 		});
-
-		// handleItemClicked = (suggestion) => {
-		// 	this.setState({
-		// 		query: suggestion,
-		// 	});
-		// };
-
 		this.setState({
 			query: value,
 			suggestions,
 		});
 	};
+
+	handleItemClicked = (suggestion) => {
+		this.setState({
+			query: suggestion,
+		});
+	};
+
 	render() {
 		return (
 			<div className="CitySearch">
@@ -29,7 +30,7 @@ class CitySearch extends Component {
 					type="text"
 					className="city"
 					value={this.state.query}
-					onChange={this.handelInputChaged}
+					onChange={this.handleInputChanged}
 				/>
 				<ul className="suggestions">
 					{this.state.suggestions.map((suggestion) => (
@@ -48,5 +49,6 @@ class CitySearch extends Component {
 		);
 	}
 }
+
 
 export default CitySearch;
