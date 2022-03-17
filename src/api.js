@@ -105,4 +105,4 @@ const getToken = async (code) => {
 	return access_token;
 };
 
-export { getToken, checkToken };
+// export { getToken, checkToken };

@@ -52,6 +52,15 @@ describe("<App /> integration", () => {
 		expect(AppWrapper.state("events")).toEqual(allEvents);
 		AppWrapper.unmount();
 	});
+
+	//4.4
+	test("When the given number of events is exceed the number of available events, display all events", async () => {
+		const AppWrapper = mount(<App />);
+		AppWrapper.setState({ numberOfEvents: 40 });
+		await getEvents();
+		expect(AppWrapper.state("events")).toHaveLength(2);
+		AppWrapper.unmount();
+	});
 });
 
 // Unit tests******************** ******************** ************
