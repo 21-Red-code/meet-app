@@ -28,18 +28,18 @@ describe("<Event /> component", () => {
 
 	// button
 	test("render the show details button", () => {
-		expect(EventWrapper.find(".show-details")).toHaveLength(1);
+		expect(EventWrapper.find(".event__details-button")).toHaveLength(1);
 	});
 
 	test("details are collapsed by default", () => {
-		expect(EventWrapper.state("collapsed")).toBe(true);
+		expect(EventWrapper.state("expanded")).toBe(false);
 	});
 
 	test("open details when show details is clicked", () => {
 		EventWrapper.setState({
 			collapsed: true,
 		});
-		EventWrapper.find(".show-details").simulate("click");
-		expect(EventWrapper.state("collapsed")).toBe(false);
+		EventWrapper.find(".event__details-button").simulate("click");
+		expect(EventWrapper.state("expanded")).toBe(true);
 	});
 });
