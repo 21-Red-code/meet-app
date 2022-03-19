@@ -38,11 +38,11 @@ class Event extends Component {
 						<p className="event__more-details__description">
 							{event.description}
 						</p>
-						<p className="event__more-detail__link-line">
+						<div className="event__more-detail__link-line">
 							<a className="event__more-detail__link" href={event.htmlLink}>
 								{event.htmlLink}
 							</a>
-						</p>
+						</div>
 					</div>
 				)}
 
