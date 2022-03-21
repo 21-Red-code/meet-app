@@ -22,6 +22,7 @@ p {
 }
 .showSuggestions {
   display: block;
+  margin-top: 1rem;
 }
 
 input[type="text"],
@@ -34,6 +35,7 @@ input[type="number"] {
   line-height: 20px;
   align-self: center;
   height: 38px;
+  margin-top: 1.2rem;
 }
 
 .city {
@@ -54,7 +56,7 @@ input[type="number"] {
   position: absolute;
   z-index: 2;
   align-self: center;
-  margin: 0;
+  margin: 1rem;
   top: 43px;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
@@ -73,7 +75,7 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: #c3d8f0;
 }
 
 .event {
