@@ -5,6 +5,7 @@ import { getEvents, extractLocations } from "./api";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
+import { WarningAlert } from "./Alert";
 
 class App extends Component {
 	state = {
@@ -61,6 +62,15 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+				<h3>Worldwide Events for Full-Stack Web Developers</h3>
+				{!navigator.onLine ? (
+					<WarningAlert
+						style={{ textAlign: "center" }}
+						text=" Offline Mode is ON! Only locally saved events will be shown "
+					/>
+				) : (
+					<WarningAlert text="" />
+				)}
 				<CitySearch
 					locations={this.state.locations}
 					updateEvents={this.updateEvents}
