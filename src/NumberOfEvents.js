@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { ErrorAlert } from "./Alert";
+import "./App.css";
 
 class NumberOfEvents extends Component {
 	state = {
@@ -28,8 +29,8 @@ class NumberOfEvents extends Component {
 		const { numberOfEvents } = this.state;
 		return (
 			<div className="NumberOfEvents">
-				<h4>Number Of Events</h4>
 				<ErrorAlert text={this.state.infoText} />
+				<p>Number Of Events</p>
 				<input
 					type="number"
 					onChange={this.handleInputChange}

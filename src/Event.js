@@ -6,11 +6,6 @@ class Event extends Component {
 		eventDetailsButtonText: "More details",
 	};
 
-	// handleClick = () => {
-	// 	this.setState({
-	// 		collapsed: !this.state.collapsed,
-	// 	});
-	// };
 	handleClickDetailsButton = (e) => {
 		const current = this.state.expanded;
 		this.setState({
@@ -52,12 +47,6 @@ class Event extends Component {
 				>
 					{eventDetailsButtonText}
 				</button>
-
-				{/* <button
-					className={`${collapsed ? "show" : "hide"}-details`}
-				>
-					{collapsed ? "Show Details" : "Hide Details"}
-				</button> */}
 			</div>
 		);
 	}
