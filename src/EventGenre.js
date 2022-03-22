@@ -18,7 +18,7 @@ const EventGenre = ({ events }) => {
 		setData(() => getData());
 	}, [events]);
 
-	const colors = ["#A3C4BC", "#BFD7B5", "#E7EFC5", "#F2DDA4", "#F4B393"];
+	const colors = ["#A3C4BC", "#BFD7B5", "#E7EFC5", "#F4B393", "#F2DDA4"];
 
 	return (
 		<ResponsiveContainer height={400}>

@@ -44,19 +44,18 @@ class App extends Component {
 	}
 
 	//4.4
-	updateEvents = (location = "all", eventCount = this.state.numberOfEvents) => {
+	updateEvents = async (location, eventCount = this.state.numberOfEvents) => {
 		getEvents().then((events) => {
 			const locationEvents =
 				location === "all"
-					? events.slice(0, eventCount)
-					: events
-							.filter((event) => event.location === location)
-							.slice(0, eventCount);
-
-			this.setState({
-				events: locationEvents.slice(0, eventCount),
-				location,
-			});
+					? events
+					: events.filter((event) => event.location === location);
+			if (this.mounted) {
+				this.setState({
+					events: locationEvents.slice(0, eventCount),
+					currentLocation: location,
+				});
+			}
 		});
 	};
 
@@ -100,6 +99,7 @@ class App extends Component {
 				<NumberOfEvents
 					// 4.4
 					updateEventNumbers={this.updateEventNumbers}
+					numberOfEvents={this.state.numberOfEvents}
 				/>
 
 				<h4>Events in each city</h4>
